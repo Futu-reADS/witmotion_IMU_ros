@@ -1,12 +1,13 @@
-witmotion:
+/**:
   ros__parameters:
-    port: ttyUSB0
+    #port: ttyUSB0
+    port: /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
     baud_rate: 9600 # baud
     polling_interval: 5 # ms
     timeout_ms: 150 # ms
-    restart_service_name: /restart_imu
+    restart_service_name: restart_imu
     imu_publisher:
-      topic_name: /imu
+      topic_name: imu
       frame_id: imu
       use_native_orientation: false
       measurements:
@@ -49,15 +50,15 @@ witmotion:
       addition: 0.0 # and addendum
     orientation_publisher:
       enabled: false
-      topic_name: /orientation
+      topic_name: orientation
     gps_publisher:
       enabled: true
       navsat_fix_frame_id: world
-      navsat_fix_topic_name: /gps
-      navsat_altitude_topic_name: /gps_altitude
-      navsat_satellites_topic_name: /gps_satellites
-      navsat_variance_topic_name: /gps_variance
-      ground_speed_topic_name: /gps_ground_speed
+      navsat_fix_topic_name: gps
+      navsat_altitude_topic_name: gps_altitude
+      navsat_satellites_topic_name: gps_satellites
+      navsat_variance_topic_name: gps_variance
+      ground_speed_topic_name: gps_ground_speed
     rtc_publisher:
       enabled: false
-      topic_name: /witmotion_clock
+      topic_name: witmotion_clock
