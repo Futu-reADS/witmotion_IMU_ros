@@ -30,7 +30,7 @@
       addition: 0.0 # and addendum
     magnetometer_publisher:
       enabled: true
-      topic_name: /magnetometer
+      topic_name: magnetometer
       frame_id: compass
       coefficient: 0.00000001 # Linear calibration parameters: coefficient
       addition: 0.0 # and addendum
