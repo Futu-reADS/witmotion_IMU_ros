@@ -663,8 +663,8 @@ void ROSWitmotionSensorController::gps_process(
     msg.header.stamp = rclcpp::Clock().now();
     msg.status.service = sensor_msgs::msg::NavSatStatus::SERVICE_GPS;
     msg.status.status = sensor_msgs::msg::NavSatStatus::STATUS_FIX;
-    msg.latitude = latitude_deg + (latitude_min / 60.f);
-    msg.longitude = longitude_deg + (longitude_min / 60.f);
+    msg.latitude = floor(latitude_deg) + (latitude_min / 60.f);
+    msg.longitude = floor(longitude_deg) + (longitude_min / 60.f);
     msg.altitude = have_ground_speed ? gps_altitude : NAN;
     msg.position_covariance_type =
         have_accuracy
